@@ -1,0 +1,42 @@
+<ns-action-bar
+    title="Current Challenge" [showBackButton]="false">
+    <ActionItem ios.position="right" nsRouterLink="/challenges/replace">
+        <Label text="&#xf0fe;" class="fa p-5"></Label>
+    </ActionItem>
+    <ActionItem ios.position="right" *ngIf="currentChallenge" nsRouterLink="/challenges/edit">
+        <Label text="&#xf044;" class="fa p-5"></Label>
+    </ActionItem>
+</ns-action-bar>
+<ScrollView>
+<FlexboxLayout class="page">
+    <StackLayout *ngIf="!currentChallenge">
+        <Label class="h3 text-center" text="No challenge found!"></Label>
+        <Button class="btn btn-primary" text="Create One!" nsRouterLink="/challenges/replace"></Button>
+    </StackLayout>
+    <StackLayout *ngIf="currentChallenge" marginTop="10" marginBottom="20">
+        <Label class="h1 text-center" [text]="currentChallenge.title" width="100%"></Label>
+        <Label class="body text-center" [text]="currentChallenge.description"></Label>
+    </StackLayout>
+    <GridLayout *ngIf="currentChallenge" rows="auto,*,*,*,*,*,*" columns="*,*,*,*,*,*,*">
+        <Label class="text-center week-day-label"
+            *ngFor="let weekDay of weekDays;
+            let idx = index" [text]="weekDay" row="0" [col]="idx">
+        </Label>
+        <FlexboxLayout *ngFor="let day of currentChallenge.days; let idex = index"
+            class="day" [ngClass]="{'not-settable': !getIsSettable(day.dayInMonth), completed: day.status === 1, failed: day.status === 2 }"
+            [row]="getRow(idex,day)" [col]="day.dayInWeek" (tap)="onChangeStatus(day)">
+            <Label [text]="day.dayInMonth">
+            </Label>
+        </FlexboxLayout>
+    </GridLayout>
+</FlexboxLayout>
+</ScrollView>
+<!-- <ListView [items]="challenges" (itemTap)="onItemTap($event)" iosEstimatedRowHeight="65">
+    <ng-template let-challenge="item" let-idx="index">
+        <GridLayout rows="40, 20" columns="50,*">
+            <Label [text]="idx" row="0" col="0" rowSpan="2"></Label>
+            <Label [text]="challenge" row="0" col="1"></Label>
+            <Label text="item content row 2" row="1" col="1"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView> -->

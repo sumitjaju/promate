@@ -1,0 +1,8 @@
+<ActionBar [title]="title" color="#333399">
+    <NavigationButton text="Back" ></NavigationButton>
+    <ActionItem *ngIf="!android && hasMenu" ios.position="left" (tap)="onToggleMenu()">
+        <Label class="menuLabel fa p-5" text="&#xf0c9;"></Label>
+    </ActionItem>
+    <ng-content></ng-content>
+</ActionBar>
+

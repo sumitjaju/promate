@@ -1,0 +1,12 @@
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<RadSideDrawer >
+    <FlexboxLayout backgroundColor="#3D9B99" tkDrawerContent flexDirection="column" justifyContent="center" >
+        <Button text="Logout" class="btn btn-primary"
+        (tap)="onLogout()"></Button>
+    </FlexboxLayout>
+    <StackLayout tkMainContent>
+        <page-router-outlet></page-router-outlet>
+    </StackLayout>
+</RadSideDrawer>
+
+

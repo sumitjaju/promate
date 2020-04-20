@@ -1,0 +1,34 @@
+FlexboxLayout {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding:20;
+    font-size: 18;
+}
+
+.btn {
+    width:80%;
+}
+
+.btn-alt {
+    font-size:20;
+    /* margin-top:10; */
+    color:white;
+    height:43;
+}
+
+.animate-button {
+    animation-name: slide-up;
+    animation-iteration-count: 1;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-up {
+    from {
+        transform:translateY(30);
+    }
+    to {
+        transform:translateY(0);
+    }
+}

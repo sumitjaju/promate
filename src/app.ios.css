@@ -1,0 +1,82 @@
+
+@import './app.common.css';
+
+.-outline {
+    border-color:#333399;
+}
+
+Button {
+    font-size:18;
+    letter-spacing: .030;
+    font-weight: 300;
+}
+
+.btn {
+    color:#333399;
+}
+
+.btn-primary {
+    background-color:#333399;
+    color:white;
+    border-radius:6;
+}
+
+.btn-success {
+    background-color:#3D9B99;
+    color:white;
+    border-radius:6;
+}
+
+.btn-danger {
+    background-color:#E67373;
+    color:white;
+    border-radius:6;
+}
+
+.btn-label {
+    color:#333399;
+}
+
+
+TextField {
+    font-size:17;
+    border-bottom-width: 0;
+    padding:0 0 0 10;
+    width:93%;
+    border-width:2;
+    height:40;
+    border-radius: 10;
+    font-weight: 400;
+}
+
+TextView {
+    border-bottom-width: 0;
+    font-size:17;
+}
+
+.h1 {
+    color:#333399;
+    font-weight: 700;
+}
+
+.body {
+    font-size:15;
+    font-weight: 400;
+    color:#505066;
+}
+
+ActivityIndicator {
+    color:#333399;
+}
+
+/* TextField {
+    border-width: 0;
+}
+
+TextView {
+    font-size:17;
+    border-bottom-width: 0;
+} */
+
+
+

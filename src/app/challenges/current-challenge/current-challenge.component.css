@@ -1,0 +1,43 @@
+.page {
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin:20;
+}
+
+.week-day-label {
+    font-weight:bold;
+    margin:15 0;
+}
+
+.day {
+    justify-content: center;
+    align-items: center;
+    width:42;
+    height:42;
+    border-color:#505066;
+    background-color: white;
+    border-width: 1;
+    border-radius: 20;
+    margin:15 0;
+}
+
+Button {
+    width:70%;
+}
+
+.completed {
+    background: #3D9B99;
+    color: white;
+}
+
+.failed {
+    background: #E67373;
+    color: white;
+}
+
+.not-settable {
+    background: #E6E6E6;
+    color: #505066;
+}
+

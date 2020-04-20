@@ -1,0 +1,8 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+.fa {
+    font-family:'FontAwesome';
+    font-size:20;
+    color:#333399;
+}

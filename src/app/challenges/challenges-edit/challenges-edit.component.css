@@ -1,0 +1,17 @@
+.nt-form {
+    justify-content:flex-start;
+    flex-direction: column;
+    align-items:center;
+}
+
+.nt-input {
+    border-color:#333399;
+    width:100%;
+    background: white;
+    font-size:18;
+}
+
+.invalid {
+    color:#E67373;
+}
+

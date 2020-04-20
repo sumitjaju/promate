@@ -1,0 +1,24 @@
+Button {
+    width:70%;
+}
+
+.emailTxt {
+    font-size: 18;
+    height:45;
+}
+
+.passwordTxt {
+    font-size: 18;
+    height:45;
+}
+
+.btn-transparent {
+    border-radius: 6;
+}
+
+.copyright {
+    color:#A5C9C9;
+    font-size:17;
+    font-weight: 400;
+}
+

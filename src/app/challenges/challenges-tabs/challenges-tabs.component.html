@@ -1,0 +1,15 @@
+<TabView selectedTabTextColor="#333399" >
+    <StackLayout *tabItem="{title: 'Today', iconSource: 'res://check'}">
+        <page-router-outlet
+            name="today" >
+        </page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Activity',iconSource: 'res://activity'}">
+        <page-router-outlet
+            name="currentChallenge">
+        </page-router-outlet>
+    </StackLayout>
+</TabView>
+<!-- <FlexboxLayout justifyContent="center" alignItems="center" *ngIf="isLoading">
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+</FlexboxLayout> -->

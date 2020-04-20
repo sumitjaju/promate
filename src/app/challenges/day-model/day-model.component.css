@@ -1,0 +1,11 @@
+FlexboxLayout {
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding:20;
+    font-size: 18;
+}
+
+Button {
+    width:250;
+}
