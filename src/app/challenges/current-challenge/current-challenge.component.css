@@ -2,28 +2,24 @@
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    margin:20;
+    margin:10;
 }
 
 .week-day-label {
     font-weight:bold;
-    margin:15 0;
+    /* margin:15 0; */
 }
 
 .day {
     justify-content: center;
     align-items: center;
-    width:42;
-    height:42;
+    width:43;
+    height:43;
     border-color:#505066;
     background-color: white;
     border-width: 1;
     border-radius: 20;
     margin:15 0;
-}
-
-Button {
-    width:70%;
 }
 
 .completed {
@@ -40,4 +36,8 @@ Button {
     background: #E6E6E6;
     color: #505066;
 }
+
+/* .btn {
+    width:80%;
+} */
 

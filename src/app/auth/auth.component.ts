@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
-import { Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TextField } from 'tns-core-modules/ui/text-field'
 import { AuthService } from "./auth.service";
-//import { alert, action } from 'tns-core-modules/ui/dialogs';
+import { alert, AlertOptions } from 'tns-core-modules/ui/dialogs';
 
 @Component ({
     selector: 'ns-auth',
@@ -35,10 +34,6 @@ export class AuthComponent implements OnInit {
         })
     }
 
-    // onSignIn() {
-    //     this.router.navigate(['/today'], { clearHistory: true });
-    // }
-
     onDone() {
         this.passwordEl.nativeElement.focus();
         this.passwordEl.nativeElement.dismissSoftInput();
@@ -48,11 +43,21 @@ export class AuthComponent implements OnInit {
         this.passwordEl.nativeElement.focus();
         this.passwordEl.nativeElement.dismissSoftInput();
 
+        const email = this.form.get('email').value;
+        const password = this.form.get('password').value;
+        if (!email || !password) {
+            alert({
+                title: "Alert!",
+                message: "Please enter required email and password to login.",
+                okButtonText: "Got it"
+            }).then(() => {
+                console.log("Race chosen!");
+            });
+        }
+
         if (!this.form.valid) {
             return;
         }
-        const email = this.form.get('email').value;
-        const password = this.form.get('password').value;
         this.form.reset();
         this.emailControlIsValid = true;
         this.passwordCntrlIsValid = true;

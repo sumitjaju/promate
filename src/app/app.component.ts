@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     private drawerSub: Subscription;
     private sideDrawer : RadSideDrawer;
     activeChallenge:string;
+    currentUser : string;
     constructor (private uiService:UIService,
         private changeDetect: ChangeDetectorRef,
         private vcRef: ViewContainerRef, private authService: AuthService) {

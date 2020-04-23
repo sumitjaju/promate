@@ -2,6 +2,7 @@
     justify-content:flex-start;
     flex-direction: column;
     align-items:center;
+    background-color:#E6E6E6;
 }
 
 .nt-input {
@@ -15,3 +16,10 @@
     color:#E67373;
 }
 
+.titleEdit {
+    font-size: 17;
+}
+
+.descEdit {
+    font-size: 17;
+}

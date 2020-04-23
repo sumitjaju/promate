@@ -13,6 +13,7 @@ Button {
 
 .btn {
     color:#333399;
+    width:65%;
 }
 
 .btn-primary {
@@ -39,14 +40,7 @@ Button {
 
 
 TextField {
-    font-size:17;
     border-bottom-width: 0;
-    padding:0 0 0 10;
-    width:93%;
-    border-width:2;
-    height:40;
-    border-radius: 10;
-    font-weight: 400;
 }
 
 TextView {

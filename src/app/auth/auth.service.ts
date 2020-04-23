@@ -6,7 +6,6 @@ import { alert } from 'tns-core-modules/ui/dialogs';
 import { User } from "./user.model";
 import { RouterExtensions } from "nativescript-angular/router";
 import { setString, getString, hasKey, remove } from 'tns-core-modules/application-settings';
-import { ChallengesServices } from "../challenges/challenges.services";
 
 const FIREBASE_API_KEY = "AIzaSyDLUNNtubhq2FQsUGwTLo9c22a3fSSKBEY";
 
@@ -37,6 +36,7 @@ export class AuthService {
             `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_API_KEY}`,
             {email: email, password: password, returnSecureToken: true}
         ).pipe(catchError(errorRes => {
+            // console.log(errorRes);
             this.handleError(errorRes.error.error.message)
             return throwError(errorRes);
         }),
@@ -62,6 +62,7 @@ export class AuthService {
             `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_API_KEY}`,
             {email: email, password: password, returnSecureToken: true}
         ).pipe(catchError(errorRes => {
+            // console.log(errorRes);
             this.handleError(errorRes.error.error.message)
             return throwError(errorRes);
         }),

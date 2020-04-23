@@ -11,7 +11,7 @@
 <FlexboxLayout class="page">
     <StackLayout *ngIf="!currentChallenge">
         <Label class="h3 text-center" text="No challenge found!"></Label>
-        <Button class="btn btn-primary" text="Create One!" nsRouterLink="/challenges/replace"></Button>
+        <Button class="btn btn-primary" width="80%" text="Create One!" nsRouterLink="/challenges/replace"></Button>
     </StackLayout>
     <StackLayout *ngIf="currentChallenge" marginTop="10" marginBottom="20">
         <Label class="h1 text-center" [text]="currentChallenge.title" width="100%"></Label>
