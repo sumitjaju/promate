@@ -4,12 +4,14 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { ChallengesTabsComponent } from "./challenges-tabs/challenges-tabs.component";
 import { TodayComponent } from "../today/today.component";
 import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
+import { CareComponent } from "./care-tips/care.component";
 
 const routes: Routes = [
     {
         path: 'tabs',
         component: ChallengesTabsComponent,
         children: [
+            { path: 'care', component: CareComponent, outlet: 'care' },
             { path: 'today', component: TodayComponent, outlet: 'today' },
             { path: 'currentC', component: CurrentChallengeComponent, outlet: 'currentChallenge' }
         ]

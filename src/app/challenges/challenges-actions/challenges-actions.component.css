@@ -24,11 +24,4 @@ FlexboxLayout {
     animation-fill-mode: forwards;
 }
 
-@keyframes slide-up {
-    from {
-        transform:translateY(30);
-    }
-    to {
-        transform:translateY(0);
-    }
-}
+

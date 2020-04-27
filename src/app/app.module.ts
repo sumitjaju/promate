@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { DayModelComponent } from "./challenges/day-model/day-model.component";
 import { ChallengesActionsModule } from "./challenges/challenges-actions/challenges-actions.module";
+import { IntroComponent } from "./auth/intro.component";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -27,7 +28,8 @@ import { ChallengesActionsModule } from "./challenges/challenges-actions/challen
     ],
     declarations: [
         AppComponent,
-        DayModelComponent
+        DayModelComponent,
+        IntroComponent
     ],
     providers: [],
     schemas: [

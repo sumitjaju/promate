@@ -1,0 +1,11 @@
+.introTextTitle {
+    font-size: 30;
+    font-weight: 400;
+}
+
+.animate-label {
+    animation-name: slide-up;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}

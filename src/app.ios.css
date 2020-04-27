@@ -38,6 +38,10 @@ Button {
     color:#333399;
 }
 
+/* .nt-input {
+    font-size:18;
+} */
+
 
 TextField {
     border-bottom-width: 0;
@@ -63,14 +67,18 @@ ActivityIndicator {
     color:#333399;
 }
 
-/* TextField {
-    border-width: 0;
-}
-
-TextView {
-    font-size:17;
-    border-bottom-width: 0;
+/* .fa {
+    font-size:24;
 } */
+
+@keyframes slide-up {
+    from {
+        transform:translateY(30);
+    }
+    to {
+        transform:translateY(0);
+    }
+}
 
 
 
