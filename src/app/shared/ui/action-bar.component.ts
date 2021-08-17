@@ -1,7 +1,11 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewContainerRef } from "@angular/core";
 import { isAndroid } from 'tns-core-modules/platform';
 import { UIService } from "./ui.service";
 import { RouterExtensions } from "nativescript-angular/router";
+import { ModalDialogService } from "nativescript-angular/modal-dialog";
+import { HelpComponent } from "~/app/today/help.component";
+
+const modalView = "ns-ui-category/modal-view/modal-navigation/modal-root";
 
 @Component ({
     selector: 'ns-action-bar',
@@ -15,7 +19,9 @@ export class ActionBarComponent implements OnInit {
     @Input() showBackButton = true;
     @Input() hasMenu = true;
 
-    constructor (private uiService:UIService, private router: RouterExtensions){}
+    constructor (private modalDialog: ModalDialogService,
+        private vcRef: ViewContainerRef,private uiService: UIService,private router: RouterExtensions){}
+
     ngOnInit() {
     }
 
@@ -23,13 +29,13 @@ export class ActionBarComponent implements OnInit {
         return isAndroid;
     }
 
-    // get canGoBack() {
-    //     return this.router.canGoBack() && this.showBackButton;
-    // }
-
-    // onGoBack() {
-    //     this.router.backToPreviousPage();
-    // }
+    getInfo() {
+        this.modalDialog.showModal(HelpComponent, {
+            fullscreen:false, viewContainerRef: this.uiService.getRootVCRef()?
+            this.uiService.getRootVCRef() : this.vcRef,
+            context: { }
+        })
+    }
 
     onToggleMenu () {
         this.uiService.toggleDrawer();

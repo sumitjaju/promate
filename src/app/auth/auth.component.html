@@ -1,103 +1,43 @@
-
-<!-- <ns-action-bar [title]="isLogin? 'Login':'SignUp'"
-    [showBackButton]="false"
-    [hasMenu]="false" >
-</ns-action-bar> -->
-<!-- <ScrollView>
-<StackLayout class="nt-form" [formGroup]="form">
-    <StackLayout >
-        <Image src="res://app-logo.png" width="100" height="100" borderRadius="10" stretch="aspectFill" ></Image>
-    </StackLayout>
-    <StackLayout >
-
-      <TextField hint="Email Address"
-
-        returnKeyType="next"
-        keyboardType="email"
-        [autocorrect]="false"
-        autocapitalizationType="none"
-        formControlName="email"
-        #emailEl
-      ></TextField>
-      <Label
-        *ngIf="!emailControlIsValid"
-        text="Please enter a valid email."
-      ></Label>
-    </StackLayout>
-    <StackLayout >
-      <TextField
-
-        returnKeyType="done"
-        [autocorrect]="false"
-        autocapitalizationType="none"
-        [secure]="true"
-        hint="Min 6 characters"
-        formControlName="password"
-        (returnPress)="onDone()"
-        #passwordEl
-      ></TextField>
-      <Label
-        *ngIf="!passwordCntrlIsValid"
-        text="Must be 6+ characters long."
-      ></Label>
-    </StackLayout>
-    <Button
-      class="btn btn-transparent"
-      [text]="isLogin ? 'Signup instead' : 'Login instead'"
-      (tap)="onSwitch()"
-    ></Button>
-    <Button
-      [text]="isLogin ? 'Login' : 'Signup'"
-      class="btn btn-primary"
-      (tap)="onSubmit()"
-      [isEnabled]="form.valid"
-      *ngIf="!isLoading"
-    ></Button>
-    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
-
-</StackLayout>
-</ScrollView> -->
 <ScrollView scroll="onScroll">
     <FlexboxLayout flexDirection="column" justifyContent="center" alignItems="center" backgroundColor="#3D9B99">
-        <!-- <Label class="welcomeTitle" text="Get Started."></Label>
-        <Label class="paragraph" text="Take the activity challenge today and take command of your health." textWrap="true"></Label> -->
-        <Image src="res://app-logo.png" width="100" height="100" borderColor="#505066" borderWidth="4" borderRadius="15" stretch="aspectFill" ></Image>
+      <Image src="res://app-logo.png" width="60" height="60" borderColor="#505066" borderWidth="3" borderRadius="15" stretch="aspectFill" ></Image>
+      <StackLayout [formGroup]="form" >
+          <StackLayout>
+              <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+          </StackLayout>
+          <StackLayout >
+              <Label *ngIf="!emailControlIsValid" text="Please enter a valid email."></Label>
+              <TextField class="emailTxt"
+              hint="Email" returnKeyType="next"
+              required keyboardType="email"
+              [autocorrect]="false"
+              autocapitalizationType="none"
+              formControlName="email"></TextField>
+          </StackLayout>
+          <StackLayout width="93%" class="hr"></StackLayout>
+          <StackLayout >
+              <Label *ngIf="!passwordCntrlIsValid" text="Please enter a valid password."></Label>
+              <TextField class="passwordTxt" hint="Password" returnKeyType="Done"
+                  required
+                  [autocorrect]="false"
+                  autocapitalizationType="none"
+                  [secure]="true"
+                  formControlName="password"
+                  #passwordEl
+                  (returnPress)="onDone()">
+              </TextField>
+          </StackLayout>
+      </StackLayout>
+      <Button
+          [text]="isLogin? 'Login' : 'SignUp'"
+          class="btn btn-primary nt-input" [isEnabled]="true"
+          (tap)="onSubmit()" [clearHistory]="true"
+          *ngIf="!isLoading">
+      </Button>
+      <Button class="btn-transparent" [text]="isLogin? 'SignUp Instead': 'Login instead'" (tap)="onSwitch()">
+      </Button>
+      <Label class="copyright m-t-30" text="© atha corp. 2020"></Label>
 
-        <StackLayout class="nt-form" [formGroup]="form">
-            <StackLayout>
-                <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
-            </StackLayout>
-            <StackLayout >
-                <Label *ngIf="!emailControlIsValid" text="Please enter a valid email."></Label>
-                <TextField class="nt-input emailTxt"
-                hint="Email" returnKeyType="next"
-                required keyboardType="email"
-                [autocorrect]="false"
-                autocapitalizationType="none"
-                formControlName="email"></TextField>
-            </StackLayout>
-            <StackLayout >
-                <Label *ngIf="!passwordCntrlIsValid" text="Please enter a valid password."></Label>
-                <TextField class="nt-input passwordTxt" hint="Password" returnKeyType="Done"
-                    required
-                    [autocorrect]="false"
-                    autocapitalizationType="none"
-                    [secure]="true"
-                    formControlName="password"
-                    #passwordEl
-                    (returnPress)="onDone()">
-                </TextField>
-            </StackLayout>
-        </StackLayout>
-        <Button
-            [text]="isLogin? 'Login' : 'SignUp'"
-            class="btn btn-primary nt-input" [isEnabled]="true"
-            (tap)="onSubmit()" [clearHistory]="true"
-            *ngIf="!isLoading">
-        </Button>
-        <Button class="btn-transparent" [text]="isLogin? 'SignUp Instead': 'Login instead'" (tap)="onSwitch()">
-        </Button>
-        <Label class="copyright m-t-30" text="© atha corp. 2020"></Label>
     </FlexboxLayout>
 </ScrollView>
 

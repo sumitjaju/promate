@@ -6,7 +6,7 @@ Button {
     font-size: 18;
     /* background-color:#A5C9C9; */
     width:95%;
-    border-width:1;
+    /* border-width:1; */
     height:40;
     border-radius: 10;
     font-weight: 400;
@@ -17,7 +17,7 @@ Button {
 .passwordTxt {
     font-size: 18;
     width:95%;
-    border-width:1;
+    /* border-width:1; */
     height:40;
     border-radius: 10;
     font-weight: 400;
@@ -42,3 +42,7 @@ Button {
     font-weight: 400;
 }
 
+hr {
+    color:#A5C9C9;
+    opacity:0.5;
+}

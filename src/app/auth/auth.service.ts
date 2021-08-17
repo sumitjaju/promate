@@ -146,6 +146,6 @@ export class AuthService {
         if (this.tokenExpirationTimer) {
             clearTimeout(this.tokenExpirationTimer);
         }
-        this.router.navigate(['/auth'],{ clearHistory: true});
+        this.router.navigate(['/'],{ clearHistory: true});
     }
 }

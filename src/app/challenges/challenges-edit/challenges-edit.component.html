@@ -3,25 +3,27 @@
     </ActionItem>
 </ns-action-bar>
 <ScrollView>
+
     <FlexboxLayout class="nt-form" >
-        <StackLayout class="nt-input">
-            <!-- <Label *ngIf="!titleCtrl.valid && titleCtrl.touched" text="Please enter a valid title."></Label> -->
-            <Label *ngIf="!titleCtrl.valid && titleCtrl.touched" text="Please enter a valid title." [ngClass]="{invalid: !titleCtrl.valid && titleCtrl.touched }"></Label>
-            <TextField class="titleEdit" hint="Title" returnKeyType="next" required
-             [(ngModel)]="title"
-             #titleCtrl="ngModel">
-            </TextField>
+        <StackLayout borderRadius="15" width="95%">
+            <StackLayout class="nt-input" paddingTop="10">
+                <Label *ngIf="!titleCtrl.valid && titleCtrl.touched" text="Please enter a valid title." [ngClass]="{invalid: !titleCtrl.valid && titleCtrl.touched }"></Label>
+                <TextField class="titleEdit -sides" hint="Title" returnKeyType="next" required
+                [(ngModel)]="title"
+                #titleCtrl="ngModel">
+                </TextField>
+            </StackLayout>
+            <StackLayout class="nt-input">
+                <StackLayout class="hr" width="95%"></StackLayout>
+            </StackLayout>
+            <StackLayout class="nt-input" paddingTop="10">
+                <Label *ngIf="!descriptionCtrl.valid && descriptionCtrl.touched" text="Describe the activity in short." [ngClass]="{invalid: !description.valid && description.touched }"></Label>
+                <TextView class="descEdit -sides" hint="Description"
+                returnKeyType="Done" required
+                [(ngModel)]="description"
+                #descriptionCtrl="ngModel"
+                ></TextView>
+            </StackLayout>
         </StackLayout>
-        <StackLayout class="nt-input">
-            <!-- <Label class="m-b-5" text="Description"></Label> -->
-            <Label *ngIf="!descriptionCtrl.valid && descriptionCtrl.touched" text="Describe the activity in short." [ngClass]="{invalid: !description.valid && description.touched }"></Label>
-            <TextView class="descEdit" hint="Description"
-            returnKeyType="Done" required
-            [(ngModel)]="description"
-            #descriptionCtrl="ngModel"
-            ></TextView>
-        </StackLayout>
-        <!-- <Button class="btn" text="Save" [isEnabled]="titleCtrl.valid && descriptionCtrl.valid"
-        (tap)="onSubmit(titleCtrl.value, descriptionCtrl.value)"></Button> -->
     </FlexboxLayout>
 </ScrollView>

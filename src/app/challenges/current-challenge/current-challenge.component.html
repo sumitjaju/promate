@@ -1,10 +1,11 @@
 <ns-action-bar
     title="Current Challenge" [showBackButton]="false">
     <ActionItem ios.position="right" nsRouterLink="/challenges/replace">
-        <Label text="&#xf0fe;" class="fa p-5"></Label>
+        <Label text="&#xf067;" class="fa"></Label>
+        <!-- <Image src="res://add" class="p-5" width="35" height="35" ></Image> -->
     </ActionItem>
     <ActionItem ios.position="right" *ngIf="currentChallenge" nsRouterLink="/challenges/edit">
-        <Label text="&#xf044;" class="fa p-5"></Label>
+        <Label text="&#xf044;" class="fa"></Label>
     </ActionItem>
 </ns-action-bar>
 <ScrollView>
