@@ -31,15 +31,16 @@ export class ChallengesTabsComponent implements OnInit {
                 this.loadTabRoutes();
             }
         )
-
     }
 
     private loadTabRoutes () {
+
         setTimeout(() => {
             this.router.navigate([{
                 outlets: {
                     currentChallenge:['currentC'],
-                    today : ['today']
+                    today : ['today'],
+                    care : ['care']
                 }}],
                 {
                     relativeTo: this.active

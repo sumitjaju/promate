@@ -3,7 +3,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TextField } from 'tns-core-modules/ui/text-field'
 import { AuthService } from "./auth.service";
-import { alert, AlertOptions } from 'tns-core-modules/ui/dialogs';
+import { alert } from 'tns-core-modules/ui/dialogs';
 
 @Component ({
     selector: 'ns-auth',
@@ -21,7 +21,6 @@ export class AuthComponent implements OnInit {
 
     constructor (private router: RouterExtensions, private authService: AuthService){}
     ngOnInit() {
-
         this.form = new FormGroup({
             email:new FormControl(null,{updateOn: 'blur', validators: [Validators.required, Validators.email]}),
             password: new FormControl (null, {updateOn: 'blur', validators: [Validators.required, Validators.minLength(6)]})

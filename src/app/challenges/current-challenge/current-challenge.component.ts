@@ -52,7 +52,7 @@ export class CurrentChallengeComponent implements OnInit, OnDestroy {
             return;
         }
         this.modalDialog.showModal(DayModelComponent, {
-            fullscreen:true, viewContainerRef: this.uiService.getRootVCRef()?
+            fullscreen:false, viewContainerRef: this.uiService.getRootVCRef()?
             this.uiService.getRootVCRef() : this.vcRef,
             context: { date: day.date, status: day.status }
         }).then ((status: DayStatus) => {

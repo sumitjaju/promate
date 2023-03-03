@@ -1,20 +1,21 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from 'nativescript-angular/common';
+import { NativeScriptCommonModule, ModalDialogService } from 'nativescript-angular/common';
 import { ChallengesRoutingModule } from "./challenges-routing.module";
+import { SharedModule } from "../shared/ui/shared.module";
+import { ChallengesActionsModule } from "./challenges-actions/challenges-actions.module";
 
 import { ChallengesTabsComponent } from "./challenges-tabs/challenges-tabs.component";
 import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
 import { TodayComponent } from "../today/today.component";
-import { SharedModule } from "../shared/ui/shared.module";
-import { ChallengesActionsModule } from "./challenges-actions/challenges-actions.module";
-
+import { CareComponent } from "./care-tips/care.component";
 
 
 @NgModule({
     declarations: [
         ChallengesTabsComponent,
         CurrentChallengeComponent,
-        TodayComponent
+        TodayComponent,
+        CareComponent
     ],
     imports: [NativeScriptCommonModule,
         ChallengesRoutingModule,
